@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusFlow™</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <h1 class="navbar-title">FocusFlow™</h1>
+        </div>
+        <div class="navbar-right">
+            <button class="music-button" onclick="toggleSpotifyPopup()">🎵 Music</button>
+        </div>
+    </nav>
+
+    <!-- Spotify Popup -->
+    <div class="spotify-popup" id="spotifyPopup">
+        <div class="spotify-content">
+            <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1EVKuMoAJjoTIw?utm_source=generator"
+                width="300"
+                height="100"
+                frameborder="0"
+                allowtransparency="true"
+                allow="encrypted-media">
+            </iframe>
+            <button class="close-popup" onclick="toggleSpotifyPopup()">Close</button>
+        </div>
+    </div>
+    <script>
+        function toggleSpotifyPopup() {
+            const spotifyPopup = document.getElementById('spotifyPopup');
+            spotifyPopup.style.display = spotifyPopup.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+    <div class="main-container">
+        <div class="container">
+            <!-- Pomodoro Timer -->
+            <h3 class="app-title">Pomodoro Timer</h3>
+            <div class="time-options">
+                <button class="pomodoro active" onclick="getType(this, timer_type_pomodoro)">Pomodoro</button>
+                <button class="short-break" onclick="getType(this, timer_type_shortbreak)">Short Break</button>
+                <button class="long-break" onclick="getType(this, timer_type_longbreak)">Long Break</button>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-bar-inner">
+                    <h3 class="progress-bar-value">25:00</h3>
+                </div>
+            </div>
+
+            <div class="control-buttons">
+                <button class="start-btn" onclick="startTimer()">Start</button>
+                <button class="stop-btn" onclick="stopTimer()">Stop</button>
+                <button class="reset-btn" onclick="resetTimer()">Reset</button>
+                <button class="settings-btn" onclick="openSettings()">Edit</button>
+            </div>
+
+            <!-- Settings -->
+            <div class="settings-modal" id="settingsModal">
+                <div class="settings-content">
+                    <h3>Settings</h3>
+                    <label for="pomodoro-time">Pomodoro Time (minutes):</label>
+                    <input type="number" id="pomodoro-time" min="1" value="25">
+
+                    <label for="short-break-time">Short Break Time (minutes):</label>
+                    <input type="number" id="short-break-time" min="1" value="5">
+
+                    <label for="long-break-time">Long Break Time (minutes):</label>
+                    <input type="number" id="long-break-time" min="1" value="15">
+
+                    <div class="settings-buttons">
+                        <button onclick="saveSettings()">Save</button>
+                        <button onclick="closeSettings()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- To-Do List Form -->
+        <div class="todo-container">
+            <h3 class="todo-title">To-Do List</h3>
+            <form id="todo-form" onsubmit="addTask(event)">
+                <input type="text" id="todo-input" placeholder="Add a task..." />
+                <button type="submit">Add</button>
+            </form>
+            <ul id="todo-list"></ul>
+        </div>
+
+    </div>
+    <script src="scripts.js"></script>
+</body>
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2024 FocusFlow™. All rights reserved.</p>
+</footer>
+
+</html>
