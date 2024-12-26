@@ -32,7 +32,7 @@ FocusFlow adalah sebuah website yang dirancang untuk membantu meningkatkan produ
 ---
 
 📸 Tangkapan Layar  
-
+![Screenshot (408)](https://github.com/user-attachments/assets/a45c1e3d-529b-4f77-b927-e4ec41fbbb3e)
 
 ---
 
@@ -50,7 +50,9 @@ FocusFlow adalah sebuah website yang dirancang untuk membantu meningkatkan produ
 ### Struktur Folder  
 - `index.html`: File utama website.  
 - `styles.css`: Gaya dan tata letak halaman.  
-- `scripts.js`: Fungsi interaktif untuk fitur Pomodoro Timer, To-Do List, dan popup Spotify.  
+- `scripts.js`: Fungsi interaktif untuk fitur Pomodoro Timer, To-Do List, dan popup Spotify.
+  
+---
 
 ## 💬 Kontak  
 Jika Anda memiliki pertanyaan atau masukan, jangan ragu untuk menghubungi kami melalui:  
